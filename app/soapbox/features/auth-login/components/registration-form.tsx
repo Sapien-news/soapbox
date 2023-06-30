@@ -14,6 +14,8 @@ import { Checkbox, Form, FormGroup, FormActions, Button, Input, Textarea } from 
 import CaptchaField from 'soapbox/features/auth-login/components/captcha';
 import { useAppDispatch, useSettings, useFeatures, useInstance } from 'soapbox/hooks';
 
+import ConsumersList from './consumers-list';
+
 const messages = defineMessages({
   username: { id: 'registration.fields.username_placeholder', defaultMessage: 'Username' },
   username_hint: { id: 'registration.fields.username_hint', defaultMessage: 'Only letters, numbers, and underscores are allowed.' },
@@ -191,6 +193,8 @@ const RegistrationForm: React.FC<IRegistrationForm> = ({ inviteToken }) => {
 
     setSubmissionLoading(true);
 
+    console.log("Gogogoggoogoo - ",params);
+
     dispatch(register(normalParams.toJS()))
       .then(postRegisterAction)
       .catch(() => {
@@ -223,93 +227,10 @@ const RegistrationForm: React.FC<IRegistrationForm> = ({ inviteToken }) => {
   const isLoading = captchaLoading || submissionLoading;
 
   return (
+    <div>
     <Form onSubmit={onSubmit} data-testid='registrations-open'>
       <fieldset disabled={isLoading} className='space-y-3'>
         <>
-          <FormGroup
-            hintText={intl.formatMessage(messages.username_hint)}
-            errors={usernameUnavailable ? [intl.formatMessage(messages.usernameUnavailable)] : undefined}
-          >
-            <Input
-              type='text'
-              name='username'
-              placeholder={intl.formatMessage(messages.username)}
-              autoComplete='off'
-              autoCorrect='off'
-              autoCapitalize='off'
-              pattern='^[a-zA-Z\d_-]+'
-              icon={require('@tabler/icons/at.svg')}
-              onChange={onUsernameChange}
-              value={params.get('username', '')}
-              required
-            />
-          </FormGroup>
-
-          <Input
-            type='email'
-            name='email'
-            placeholder={intl.formatMessage(messages.email)}
-            autoComplete='off'
-            autoCorrect='off'
-            autoCapitalize='off'
-            onChange={onInputChange}
-            value={params.get('email', '')}
-            required
-          />
-
-          <Input
-            type='password'
-            name='password'
-            placeholder={intl.formatMessage(messages.password)}
-            autoComplete='off'
-            autoCorrect='off'
-            autoCapitalize='off'
-            onChange={onPasswordChange}
-            value={params.get('password', '')}
-            required
-          />
-
-          <FormGroup
-            errors={passwordMismatch ? [intl.formatMessage(messages.passwordMismatch)] : undefined}
-          >
-            <Input
-              type='password'
-              name='password_confirmation'
-              placeholder={intl.formatMessage(messages.confirm)}
-              autoComplete='off'
-              autoCorrect='off'
-              autoCapitalize='off'
-              onChange={onPasswordConfirmChange}
-              onBlur={onPasswordConfirmBlur}
-              value={passwordConfirmation}
-              required
-            />
-          </FormGroup>
-
-          {birthdayRequired && (
-            <BirthdayInput
-              value={params.get('birthday')}
-              onChange={onBirthdayChange}
-              required
-            />
-          )}
-
-          {needsApproval && (
-            <FormGroup
-              labelText={<FormattedMessage id='registration.reason' defaultMessage='Why do you want to join?' />}
-            >
-              <Textarea
-                name='reason'
-                placeholder={intl.formatMessage(messages.reasonHint)}
-                maxLength={500}
-                onChange={onInputChange}
-                value={params.get('reason', '')}
-                autoGrow
-                required
-              />
-            </FormGroup>
-          )}
-
           <CaptchaField
             onFetch={onFetchCaptcha}
             onFetchFail={onFetchCaptchaFail}
@@ -330,25 +251,11 @@ const RegistrationForm: React.FC<IRegistrationForm> = ({ inviteToken }) => {
               required
             />
           </FormGroup>
-
-          {supportsEmailList && (
-            <FormGroup labelText={intl.formatMessage(messages.newsletter)}>
-              <Checkbox
-                name='accepts_email_list'
-                onChange={onCheckboxChange}
-                checked={params.get('accepts_email_list', false)}
-              />
-            </FormGroup>
-          )}
-
-          <FormActions>
-            <Button type='submit'>
-              <FormattedMessage id='registration.sign_up' defaultMessage='Sign up' />
-            </Button>
-          </FormActions>
         </>
       </fieldset>
     </Form>
+    <ConsumersList />
+    </div>
   );
 };
 

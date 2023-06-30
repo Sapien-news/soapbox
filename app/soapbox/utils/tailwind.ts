@@ -50,6 +50,7 @@ export const fromLegacyColors = (soapboxConfig: SoapboxConfig): TailwindColorPal
 /** Convert Soapbox Config into Tailwind colors */
 export const toTailwind = (soapboxConfig: SoapboxConfig): SoapboxConfig => {
   const colors: SoapboxColors = ImmutableMap(soapboxConfig.get('colors'));
+  // @ts-ignore
   const legacyColors: SoapboxColors = ImmutableMap(fromJS(fromLegacyColors(soapboxConfig)));
 
   return soapboxConfig.set('colors', legacyColors.mergeDeep(colors));

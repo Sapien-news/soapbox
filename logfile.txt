@@ -1,0 +1,61 @@
+yarn run v1.22.19
+$ ${npm_execpath} run start
+$ npx webpack-dev-server
+Running in development mode
+<i> [webpack-dev-server] [HPM] Proxy created: /api/patron  -> http://localhost:3037
+<i> [webpack-dev-server] [HPM] Proxy created: /api  -> https://sapien.country
+<i> [webpack-dev-server] [HPM] Proxy created: /pleroma  -> https://sapien.country
+<i> [webpack-dev-server] [HPM] Proxy created: /nodeinfo  -> https://sapien.country
+<i> [webpack-dev-server] [HPM] Proxy created: /socket  -> https://sapien.country
+<i> [webpack-dev-server] [HPM] Proxy created: /oauth  -> https://sapien.country
+<i> [webpack-dev-server] [HPM] Proxy created: /.well-known/webfinger  -> https://sapien.country
+<i> [webpack-dev-server] [HPM] Proxy created: /static  -> https://sapien.country
+<i> [webpack-dev-server] [HPM] Proxy created: /main/ostatus  -> https://sapien.country
+<i> [webpack-dev-server] [HPM] Proxy created: /ostatus_subscribe  -> https://sapien.country
+<i> [webpack-dev-server] [HPM] Proxy created: /favicon.png  -> https://sapien.country
+<i> [webpack-dev-server] Project is running at:
+<i> [webpack-dev-server] Loopback: http://localhost:3036/
+<i> [webpack-dev-server] On Your Network (IPv4): http://134.209.22.157:3036/
+<i> [webpack-dev-server] Content not from webpack is served from '/opt/soapbox/public' directory
+<i> [webpack-dev-server] 404s will fallback to '/'
+<i> [webpack-dev-middleware] wait until bundle finished: /
+fatal: ambiguous argument 'v3.2.0': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+--------------------- Unused Files ---------------------
+
+/opt/soapbox/app/assets/images/avatar-missing.svg
+
+/opt/soapbox/app/assets/images/web-push/web-push-icon_expand.png
+
+/opt/soapbox/app/assets/images/web-push/web-push-icon_favourite.png
+
+/opt/soapbox/app/assets/images/web-push/web-push-icon_reblog.png
+
+/opt/soapbox/app/soapbox/jest/fixtures/chats.json
+
+There are 5 unused files (¬º-°)¬. 
+
+Please be careful if you want to remove them.
+
+
+--------------------- Unused Exports ---------------------
+
+Perfect, there is nothing to do ٩(◕‿◕｡)۶.
+webpack compiled successfully
+No errors found.
+(node:192857) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 close listeners added to [Server]. Use emitter.setMaxListeners() to increase limit
+(Use `node --trace-warnings ...` to show where the warning was created)
+<i> [webpack-dev-server] Gracefully shutting down. To force exit, press ^C again. Please wait...
+<i> [webpack-dev-server] [HPM] server close signal received: closing proxy server
+<i> [webpack-dev-server] [HPM] server close signal received: closing proxy server
+<i> [webpack-dev-server] [HPM] server close signal received: closing proxy server
+<i> [webpack-dev-server] [HPM] server close signal received: closing proxy server
+<i> [webpack-dev-server] [HPM] server close signal received: closing proxy server
+<i> [webpack-dev-server] [HPM] server close signal received: closing proxy server
+<i> [webpack-dev-server] [HPM] server close signal received: closing proxy server
+<i> [webpack-dev-server] [HPM] server close signal received: closing proxy server
+<i> [webpack-dev-server] [HPM] server close signal received: closing proxy server
+<i> [webpack-dev-server] [HPM] server close signal received: closing proxy server
+<i> [webpack-dev-server] [HPM] server close signal received: closing proxy server

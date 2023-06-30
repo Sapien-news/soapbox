@@ -76,7 +76,7 @@ const devServerUrl = (() => {
 
 const devServer: DevServerConfiguration = {
   compress: true,
-  host: devServerUrl.hostname,
+  host: '0.0.0.0',
   port: devServerUrl.port,
   https: devServerUrl.protocol === 'https:',
   hot: true,

@@ -155,6 +155,14 @@ const configuration: Configuration = {
       'custom': resolve('custom'),
     },
     fallback: {
+      crypto: require.resolve('crypto-browserify'),
+      stream: require.resolve('stream-browserify'),
+      assert: require.resolve('assert'),
+      http: require.resolve('stream-http'),
+      https: require.resolve('https-browserify'),
+      os: require.resolve('os-browserify'),
+      url: require.resolve('url'),
+      zlib: require.resolve('zlib-browserify'),
       path: require.resolve('path-browserify'),
       util: require.resolve('util'),
       // https://github.com/facebook/react/issues/20235#issuecomment-1061708958

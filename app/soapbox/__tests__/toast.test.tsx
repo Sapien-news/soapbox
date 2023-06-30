@@ -1,3 +1,4 @@
+import { ignoreNextOnError } from '@sentry/browser/types/helpers';
 import { render } from '@testing-library/react';
 import { AxiosError } from 'axios';
 import React from 'react';
@@ -73,6 +74,7 @@ describe('toasts', () =>{
       statusText: String(status),
       status,
       headers: {},
+      // @ts-ignore
       config: {},
     });
 
